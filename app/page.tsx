@@ -1,5 +1,9 @@
+import Model from "./Components/Model/Model";
+
 export default function Home() {
   return (
-    <main></main>
+        <main className="homescreen">
+      <Model />
+    </main>
   )
 }
