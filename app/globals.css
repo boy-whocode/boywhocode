@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+@layer components{
+    *{
+    box-sizing:border-box;
+  }
+  /* layout start */
+  .row{
+    @apply flex flex-wrap w-full;
+  }
+  .col{
+    @apply flex-1;
+  }
+  .col_1{
+    @apply w-1/12;
+  }
+  .col_2{
+    @apply w-2/12;
+  }
+  .col_3{
+    @apply w-3/12;
+  }
+  .col_4{
+    @apply w-4/12;
+  }
+  .col_5{
+    @apply w-5/12;
+  }
+  .col_6{
+    @apply w-6/12;
+  }
+  .col_7{
+    @apply w-7/12;
+  }
+  .col_8{
+    @apply w-8/12;
+  }
+  .col_9{
+    @apply w-9/12;
+  }
+  .col_10{
+    @apply w-10/12;
+  }
+  .col_11{
+    @apply w-11/12;
+  }
+  .col_12{
+    @apply w-full;
+  }
+  /* layout end */
+  /* Vcard start */
+  /* vcard header start */
+  .VcardHeader{
+    @apply text-white row justify-center md:pt-16;
+  }
+  .VcardHeader__inner{
+    @apply w-[570px] bg-white bg-opacity-20 text-center pt-10;
+    box-shadow:0 -5px 40px 7px rgba(0,0,0,0.08);
+  }
+  .VcardHeader__logo{
+    @apply relative h-24  mx-auto
+  }
+  .VcardHeader__name{
+    @apply py-5 text-2xl;
+  }
+  .VcardHeader__profile{
+    @apply font-light opacity-75 text-sm pb-4
+  }
+  .VcardHeader__contacts{
+    @apply row border-t;
+  }
+  .VcardHeader__contact{
+    @apply col;
+  }
+  .VcardHeader__contact:hover{
+    @apply bg-black bg-opacity-30;
+  }
+  .VcardHeader__contact + .VcardHeader__contact{
+    @apply border-l;
+  }
+  /* vcard header end */
+  /* vcard body start */
+  .VcardBody{
+    @apply font-bold text-white row justify-center md:pb-20 bg-[#b9b9b9];
+  }
+  .VcardBody__innersec{
+    @apply w-[570px] bg-white px-10 py-5 text-center md:rounded-br-md md:rounded-bl-md;
+    box-shadow:0 -5px 40px 7px rgba(0,0,0,0.08);
+  }
+  .VcardBody__contactDetails{
+    @apply text-black relative;
+  }
+  .VcardBody__contactDetails + .VcardBody__contactDetails::before{
+    content:"";
+    @apply absolute top-0 right-0 border-t border-b;
+    width:calc(100% - 64px)
+  }
+  .VcardBody__contactDetails + .VcardBody__contactDetails::after{
+    content:"";
+    @apply absolute bottom-0 right-0 border-t border-b;
+    width:calc(100% - 64px)
+  }
+  .VcardBody__contactIcon{
+    @apply text-xl w-16;
+    color: #b3b4bb;
+  }
+  .VcardBody__contactText{
+    @apply text-left font-normal col text-sm md:text-base;
+    color:#323032;
+  } 
+  .VcardBody__contactSubText{
+    @apply text-xs block;
+    color:#82848f;
+  }
+  .VcardBody__socialMedia{
+    @apply pt-2
+  }
+  .VcardBody__socialMedia h5{
+    @apply text-base text-left pl-16 font-normal;
+    color:#82848f;
+  }
+  .VcardBody__socialMediaLinkGroup{
+    @apply row pl-16 py-2;
+  }
+  .VcardBody__socialMediaLink{
+    @apply p-1.5 md:p-2 text-center rounded-full border bg-black text-2xl md:text-3xl;
+  }
+  .VcardBody__socialMediaLink--linkedin{
+    background-color:#0077b5;
+  }
+  .VcardBody__socialMediaLink + .VcardBody__socialMediaLink{
+    @apply mx-2
+  }
+  /* vcard body end */
+  /* Vcard end */
+}
